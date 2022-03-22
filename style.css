@@ -1,0 +1,178 @@
+@font-face {
+  font-family: 'sol';
+  src: url('fonts/sol-reg.woff') format('woff');
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: 'sol';
+  src: url('fonts/sol-med.woff') format('woff');
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: 'sol';
+  src: url('fonts/sol-lig.woff') format('woff');
+  font-weight: 300;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+html,body{
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+    font-family: 'sol', sans-serif;
+    background: #ceb8a2;
+    background: #fed354;
+}
+
+.icons img{
+    position: fixed;
+    height: 150px;
+    opacity: 0.3;
+}
+
+img.i1{
+    bottom: 100px;
+    right: -10px;
+    transform: rotate(20deg);
+}
+
+img.i2{
+    bottom: 180px;
+    right: -10px;
+    height: 90px;
+    transform: rotate(-40deg);
+}
+
+img.i3{
+    top: 120px;
+    left: 90px;
+    height: 150px;
+    transform: rotate(10deg);
+}
+
+.container{
+    max-width: 940px;
+    margin: 0 auto;
+    z-index: 100;
+    position: relative;
+    padding: 5px;
+}
+
+.back{
+    font-weight: 700;
+    display: inline-block;
+    font-size: 25px;
+}
+
+.back img{
+    height: 30px;
+    position: relative;
+    top: 6px;
+}
+
+h2{
+    font-size: 45px;
+    margin-bottom: 10px;
+    letter-spacing: -1px;
+    color: #111;
+    padding-top: 30px;
+    margin-top: 70px;
+    position: relative;
+}
+
+h2 img{
+    position: absolute;
+    z-index: -1;
+    height: 100px;
+    transform: rotate(5deg);
+    top: 5px;
+}
+
+.question, .back{
+    cursor: pointer;
+}
+
+.question{
+    font-size: 22px;
+    font-weight: 300;
+    border-top: 1px solid #111;
+    padding: 10px;
+    margin: 0px;
+}
+
+.question:hover, .back:hover{
+    opacity: 1;
+    opacity: 0.8;
+}
+
+.problem{
+    padding: 0px;
+    font-size: 25px;
+    font-weight: 300;
+    margin-bottom: 80px;
+    margin-top: 80px;
+    line-height: 1.5;
+}
+
+.page{
+    background: #ceb8a2;
+    position: relative;
+    z-index: 100;
+    padding-bottom: 20px;
+}
+
+#content input{
+    font-size: 25px;
+    -webkit-appearance: none;
+    outline: none;
+    background: none;
+    padding: 2px 5px;
+    border: none;
+    border: 1px solid #111;
+}
+
+@media only screen and (max-width: 500px) {
+    #content input{
+	width: 100%;
+    }
+}
+
+#content input.right{
+    border: 2px solid #111;
+    border-color: #2F8A47 !important;
+    padding: 1px 4px;
+}
+
+#content input.wrong{
+    border: 2px solid #111;
+    border-color: #DC214D !important;
+    padding: 1px 4px;
+}
+
+.ans{
+    margin-top: 5px;
+    margin-bottom: 5px;
+    display: inline-block;
+    color: #2F8A47;
+}
+
+.ans span{
+    opacity: 0.3;
+}
+
+.boton{
+    border: 1px solid #111;
+    padding: 5px 15px;
+    margin-right: 15px;
+    display: inline-block;
+    font-size: 20px;
+    cursor: pointer;
+    font-weight: 700;
+}
