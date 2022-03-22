@@ -12,13 +12,14 @@ function questions(data, id){
     $content = $content.find(".container");
 
     $content.append("<p class='back'> <img src='images/back-arrow.png'> Go back</p>");
-    $content.append("<h2>"+data[ id ][ "title" ]+"<h2>")
+    $content.append("<h2 class='titlepage'>"+data[ id ][ "title" ]+"</h2>")
+    $content.append("<h3>"+data[ id ][ "description" ]+"</h3>")
     $(".back").click(function(){index(data);})
     problems = data[ id ][ "questions" ];
     for( var i = 0; i < problems.length ; i++ ){
 	console.log(problems[i]);
 	$content.append(function(){
-	    sentence = "<p class='problem'>";
+	    sentence = "<p class='problem'><b>" + (i+1) + ")</b> ";
 	    parts = problems[ i ][ "parts" ];
 
 	    for( var j = 0; j < parts.length ; j++ ){
@@ -28,11 +29,11 @@ function questions(data, id){
 		    sentence += '<input data-ans="' + parts[ j ][ "answer" ]+'"> ';
 	    }
 
+	    sentence += "<span class='show boton'>Show</span>";
+	    sentence += "<span class='check boton'>Check</span>";
 	    sentence += "<br>"
 	    sentence += "<span class='ans'><br></span>";
 	    sentence += "<br>"
-	    sentence += "<span class='check boton'>Check</span>";
-	    sentence += "<span class='show boton'>Show</span>";
 
 	    sentence += "</p>";
 	    return sentence;
@@ -68,6 +69,7 @@ function index(data){
     console.log(data.length);
     category = "";
     for( var i = 0; i < data.length ; i++ ){
+	console.log( data[ i ] );
 	if( category != data[ i ][ "category" ] ){
 	    category = data[ i ][ "category" ];
 	    $content.append( "<h2> <img src='images/quest.png'>" + category + "</h2>" );
