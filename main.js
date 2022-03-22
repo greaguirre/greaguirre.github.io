@@ -29,11 +29,13 @@ function questions(data, id){
 		    sentence += '<input data-ans="' + parts[ j ][ "answer" ]+'"> ';
 	    }
 
-	    sentence += "<span class='show boton'>Show</span>";
+	    sentence += "<span class='botoncase'>";
 	    sentence += "<span class='check boton'>Check</span>";
-	    sentence += "<br>"
+	    sentence += "<span class='show boton'>Show</span>";
+	    sentence += "</span>";
+	    sentence += "<br>";
 	    sentence += "<span class='ans'><br></span>";
-	    sentence += "<br>"
+	    sentence += "<br>";
 
 	    sentence += "</p>";
 	    return sentence;
@@ -41,7 +43,7 @@ function questions(data, id){
     }
 
 	$(".check").click(function(){
-	    $(this).parent().find('input').each(function(indx){
+	    $(this).parent().parent().find('input').each(function(indx){
 		if( $(this).val() == $(this).data('ans') ){
 		    $(this).removeClass('wrong');
 		    $(this).addClass('right');
@@ -53,9 +55,9 @@ function questions(data, id){
 	});
 	$(".show").click(function(){
 	    console.log("xd");
-	    $ans = $(this).parent().find('.ans');
+	    $ans = $(this).parent().parent().find('.ans');
 	    $ans.html("<span>| </span>");
-	    $(this).parent().find('input').each(function(indx){
+	    $(this).parent().parent().find('input').each(function(indx){
 		$ans.append($(this).data('ans')+"<span> | </span>");
 	    })
 	});
