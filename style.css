@@ -124,6 +124,9 @@ h2.titlepage{
     margin-bottom: 10px;
     margin-top: 10px;
     line-height: 1.5;
+    padding-right: 100px;
+    position: relative;
+    padding-right: 100px;
 }
 
 .page{
@@ -178,9 +181,10 @@ h2.titlepage{
     display: inline-block;
     width: 80px;
     float: right;
-    position: relative;
-    top: -20px;
+    position: absolute;
     z-index: 150;
+    right: 0;
+    top: -20px;
 }
 
 .boton{
@@ -204,11 +208,15 @@ h2.titlepage{
 	text-align: right;
 	display: block;
 	margin-top: 5px;
+	position: relative;
     }
     .boton{
 	margin-top: 0px;
 	margin-left: 2px;
 	font-size: 14px;
+    }
+    .problem{
+	padding-right: 0px;
     }
 }
 
