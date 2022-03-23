@@ -6,18 +6,15 @@ function clear(){
 
 function questions(data, id){
     clear();
-
     $content = $('#content');
     $content.append("<div class='page'><div class='container'></div></div>");
     $content = $content.find(".container");
-
     $content.append("<p class='back'> <img src='images/back-arrow.png'> Go back</p>");
     $content.append("<h2 class='titlepage'>"+data[ id ][ "title" ]+"</h2>")
     $content.append("<h3>"+data[ id ][ "description" ]+"</h3>")
     $(".back").click(function(){index(data);})
     problems = data[ id ][ "questions" ];
     for( var i = 0; i < problems.length ; i++ ){
-	console.log(problems[i]);
 	$content.append(function(){
 	    sentence = "<p class='problem'><b>" + (i+1) + ")</b> ";
 	    parts = problems[ i ][ "parts" ];
@@ -42,25 +39,24 @@ function questions(data, id){
 	});
     }
 
-	$(".check").click(function(){
-	    $(this).parent().parent().find('input').each(function(indx){
-		if( $(this).val() == $(this).data('ans') ){
-		    $(this).removeClass('wrong');
-		    $(this).addClass('right');
-		} else {
-		    $(this).removeClass('right');
-		    $(this).addClass('wrong');
-		}
-	    });
+    $(".check").click(function(){
+	$(this).parent().parent().find('input').each(function(indx){
+	    if( $(this).val() == $(this).data('ans') ){
+		$(this).removeClass('wrong');
+		$(this).addClass('right');
+	    } else {
+		$(this).removeClass('right');
+		$(this).addClass('wrong');
+	    }
 	});
-	$(".show").click(function(){
-	    console.log("xd");
-	    $ans = $(this).parent().parent().find('.ans');
-	    $ans.html("<span>| </span>");
-	    $(this).parent().parent().find('input').each(function(indx){
-		$ans.append($(this).data('ans')+"<span> | </span>");
-	    })
-	});
+    });
+    $(".show").click(function(){
+	$ans = $(this).parent().parent().find('.ans');
+	$ans.html("<span>| </span>");
+	$(this).parent().parent().find('input').each(function(indx){
+	    $ans.append($(this).data('ans')+"<span> | </span>");
+	})
+    });
 }
 
 function index(data){
@@ -68,10 +64,8 @@ function index(data){
     $content = $('#content');
     $content.append("<div class='container'></div>");
     $content = $content.find(".container")
-    console.log(data.length);
     category = "";
     for( var i = 0; i < data.length ; i++ ){
-	console.log( data[ i ] );
 	if( category != data[ i ][ "category" ] ){
 	    category = data[ i ][ "category" ];
 	    $content.append( "<h2> <img src='images/quest.png'>" + category + "</h2>" );
@@ -81,6 +75,7 @@ function index(data){
     $(".question").click(function(){
 	id = questions(data, $(this).data("id"));
     });
+
 }
 
 $(window).on('load', function(){
