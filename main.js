@@ -1,13 +1,4 @@
-function clear(){
-    $content = $('#content');
-    $content.html("");
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-}
-
-
-
 function index(data){
-    clear();
     $content = $('#content');
     $content.append("<div class='container'></div>");
     $content = $content.find(".container")

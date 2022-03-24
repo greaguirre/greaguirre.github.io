@@ -3,9 +3,8 @@ function questions(data, id){
     $content.append("<div class='page'><div class='container'></div></div>");
     $content = $content.find(".container");
     $content.append("<a href='/' class='back'> <img src='../images/back-arrow.png'> Go back</a>");
-    $content.append("<h2 class='titlepage'>"+data[ id ][ "title" ]+"</h2>")
-    $content.append("<h3>"+data[ id ][ "description" ]+"</h3>")
-    $(".back").click(function(){index(data);})
+    $content.append("<h2 class='titlepage'>"+data[ id ][ "title" ]+"</h2>");
+    $content.append("<h3>"+data[ id ][ "description" ]+"</h3>");
     problems = data[ id ][ "questions" ];
     for( var i = 0; i < problems.length ; i++ ){
 	$content.append(function(){
