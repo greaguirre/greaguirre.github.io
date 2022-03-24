@@ -69,6 +69,9 @@ img.i3{
     font-weight: 700;
     display: inline-block;
     font-size: 25px;
+    color: #111 !important;
+    text-decoration: none !important;
+    margin-top: 30px;
 }
 
 .back img{
@@ -117,6 +120,9 @@ h2 img{
     border-top: 1px solid #111;
     padding: 10px;
     margin: 0px;
+    text-decoration: none !important;
+    color: #111 !important;
+    display: block;
 }
 
 .question:hover, .back:hover{
