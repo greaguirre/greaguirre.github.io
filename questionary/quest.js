@@ -15,7 +15,7 @@ function questions(data, id){
 		if( parts[ j ][ "type" ] == "text" )
 		    sentence += parts[ j ][ "value" ] + " ";
 		else
-		    sentence += '<input data-ans="' + parts[ j ][ "answer" ]+'"> ';
+		    sentence += '<input data-ans="' + parts[ j ][ "answer" ]+'"> <img class="img-wrong" src="../images/close.png"> <img class="img-right" src="../images/check.png"> ';
 	    }
 
 	    sentence += "<span class='botoncase'>";
@@ -36,9 +36,13 @@ function questions(data, id){
 	    if( $(this).val() == $(this).data('ans') ){
 		$(this).removeClass('wrong');
 		$(this).addClass('right');
+		$(this).next().next(".img-right").show();
+		$(this).next(".img-wrong").hide();
 	    } else {
 		$(this).removeClass('right');
 		$(this).addClass('wrong');
+		$(this).next(".img-wrong").show();
+		$(this).next().next(".img-right").hide();
 	    }
 	});
     });

@@ -269,3 +269,10 @@ h2.titlepage{
 .check{
     font-weight: 700;
 }
+
+.img-right, .img-wrong{
+    height: 16px;
+    position: relative;
+    top: 4px;
+    display: none;
+}
